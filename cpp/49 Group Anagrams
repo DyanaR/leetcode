@@ -1,0 +1,22 @@
+class Solution {
+public:
+    vector<vector<string>> groupAnagrams(vector<string>& strs) {
+        
+        unordered_map<string, vector<string>> mp;
+        for (auto& n : strs) {
+            // assigning current word
+            string word = n;
+            sort(word.begin(), word.end());
+ 
+            // push sorted word into mp
+            //  groups all anagrams words
+            mp[word].push_back(n);
+        }
+        vector<vector<string>> ans;
+ 
+        for (auto& x : mp) {
+            ans.push_back(x.second);
+        }
+        return ans;
+    }
+};
