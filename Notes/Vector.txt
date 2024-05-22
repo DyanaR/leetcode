@@ -1,0 +1,8 @@
+Dynamic Array (std::vector)
+
+-when created, it doesn't have a set size. You can give it a set size, but you do not need to give it a size. It is created, elements are put into it and the size grows. 
+
+-so can start an array without knowing how many elements are going to be in it, then push as much as needed.
+
+Syntax: 
+vector<int>& int
