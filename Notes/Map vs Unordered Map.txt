@@ -1,0 +1,21 @@
+map vs unordered_map in C++
+
+std::map
+-all elements are sorted
+-self-balancing binary tree (red-black tree), therefore it's in order
+-takes in a key and value
+
+Syntax:
+map<int, string> sample_map;
+
+-Can store map in a map:
+ map<int, map<int, string> > nested_map;
+
+--------------------------------------------------------------------------------
+
+std::unordered map
+-a hash table, therefore it's unordered
+- can usually be faster than map
+
+Syntax:
+unordered_map<int, string> sample_map;
