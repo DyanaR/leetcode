@@ -5,4 +5,4 @@ Dynamic Array (std::vector)
 -so can start an array without knowing how many elements are going to be in it, then push as much as needed.
 
 Syntax: 
-vector<int>& int
+vector<int>& nums

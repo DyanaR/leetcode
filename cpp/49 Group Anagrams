@@ -2,19 +2,31 @@ class Solution {
 public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
         
+        // mp will store each unique sorted string as the key
+        // and a list of its anagrams as the value
         unordered_map<string, vector<string>> mp;
+        
+        // loops through each string in strs so we can sort each one
         for (auto& n : strs) {
-            // assigning current word
-            string word = n;
-            sort(word.begin(), word.end());
- 
-            // push sorted word into mp
-            //  groups all anagrams words
-            mp[word].push_back(n);
+            // makes a copy of current word so we can differentiate from 
+            //the sorted and non-sorted word
+            string word = n; //"eat"
+
+            // sort each string in the array, so we can easily find its anagrams 
+            sort(word.begin(), word.end()); // "aet"
+            
+            // push original string into mp using sorted word as the key
+            mp[word].push_back(n); // mp = {"aet": ["eat", "tea"], "ant": ["tan"]}
         }
+
+        // ans is a 2D vector that will hold the output
         vector<vector<string>> ans;
  
+        //loops through each key-value pair in mp
         for (auto& x : mp) {
+            // x.first would be the key, sorted string
+            // x.second would be the vector of strings that are anagrams of each other
+            // we push each group of anagrams to ans
             ans.push_back(x.second);
         }
         return ans;
