@@ -1,0 +1,24 @@
+Types of For Loops in C++
+
+1. Traditional for loop:
+-This loop consists of three parts: initialization, condition, and increment/decrement.
+-It is commonly used when the number of iterations is known beforehand.
+
+ for (initialization; condition; increment) {
+    // Loop body
+}
+
+2. Range-based for loop:
+-This loop is used to iterate over elements in a container or array.
+-It is concise and easier to read, especially when you need to access each element in a collection.
+
+for (declaration : range) {
+    // Loop body
+}
+
+Example:
+std::vector<int> vec = {1, 2, 3, 4, 5};
+for (int num : vec) {
+    std::cout << num << " ";
+}
+
