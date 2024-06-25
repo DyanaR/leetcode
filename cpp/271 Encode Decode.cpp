@@ -14,16 +14,24 @@ public:
     vector<string> decode(string s)
     {
         vector<string> decoded;
-        for (int i = 0; i < s.size(); i++)
+        int i = 0;
+        while (i < s.size())
         {
-            while (s[i] != '#')
+            // Find the position of the delimiter '#'
+            int j = i;
+            while (s[j] != '#')
             {
-                i++;
+                j++;
             }
-            int numberOfSkips = stoi(s.substr(i - 1, 1));
-            string str = s.substr(i + 1, numberOfSkips);
+
+            int numberOfSkips = stoi(s.substr(i, j - i));
+
+            j++;
+
+            string str = s.substr(j, numberOfSkips);
             decoded.push_back(str);
-            i = i + numberOfSkips;
+
+            i = j + numberOfSkips;
         }
         return decoded;
     }
